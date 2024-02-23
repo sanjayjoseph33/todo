@@ -1,4 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:todo/utils/constants/color_constants.dart';
+import 'package:todo/view/note_screen/note_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -9,9 +13,21 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
+  void initState() {
+    Timer(Duration(seconds: 2), () {
+      Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => NoteScreen(),
+          ));
+    });
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: ColorConstants.mainBlack,
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -24,12 +40,13 @@ class _SplashScreenState extends State<SplashScreen> {
             SizedBox(
               height: 30,
             ),
-            Text("Note pad",
-            style: TextStyle(
-              fontSize: 40,
-              color: Colors.white,
-              fontWeight: FontWeight.w900,
-            ),
+            Text(
+              "Note pad",
+              style: TextStyle(
+                fontSize: 40,
+                color: ColorConstants.mainLightGrey,
+                fontWeight: FontWeight.w900,
+              ),
             )
           ],
         ),
