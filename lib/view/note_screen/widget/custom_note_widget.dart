@@ -45,7 +45,9 @@ class _CustomNotesWidgetState extends State<CustomNotesWidget> {
                 children: [
                   IconButton(
                     icon: Icon(Icons.edit),
-                    onPressed: () {},
+                    onPressed: () {
+                      // implement edit functinoality here
+                    },
                   ),
                   IconButton(
                     icon: Icon(Icons.delete),

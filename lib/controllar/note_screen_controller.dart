@@ -4,6 +4,8 @@ class NoteScreenController {
   static TextEditingController titleController = TextEditingController();
   static TextEditingController desController = TextEditingController();
   static TextEditingController dateController = TextEditingController();
+
+  static Color selectColor = Colors.white;
   List notesList = [
     {
       "title": "Lorem Ipsum",
@@ -22,7 +24,7 @@ class NoteScreenController {
         "title": titleController.text,
         "des": desController.text,
         "date": dateController.text,
-        "color": Colors.white,
+        "color": selectColor
       },
     );
   }
@@ -34,4 +36,20 @@ class NoteScreenController {
   }
 
   // function to edit data
+
+  void editData() {}
+
+  //clear controllers
+
+  static void clearControllers() {
+    titleController.clear();
+    desController.clear();
+    dateController.clear();
+  }
+
+  // on color seleciton
+
+  void onColorSelection(Color newColor) {
+    selectColor = newColor;
+  }
 }
